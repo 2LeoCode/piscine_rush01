@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 14:57:44 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/15 16:39:24 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/15 20:56:34 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,69 @@ int		ft_strlen(char *str)
 	int i;
 
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }
 
-char	*ft_recup_args(char *args)
+void	ft_display_tab(char **arr)
 {
 	int i;
 	int j;
-	char *tab;
+
+	i = 0;
+	j = 0;
+	while (i < 4)
+	{
+		j = 0;
+		while (j < 4)
+		{
+			write(1, &arr[i][j], 1);
+			if (j != 3)
+				write(1, " ", 1);
+			else
+				write(1, "\n", 1);
+			j++;
+		}
+		i++;
+	}
+}
+
+int		ft_check_values(char *val)
+{
+	int i;
+
+	i = 0;
+	if (ft_strlen(val) != 31)
+		return (1);
+	while (i < 31)
+	{
+		if (val[i] != '1' && val[i] != '2' && val[i] != '3' && val[i] != '4')
+			return (1);
+		i += 2;
+	}
+	i -= 3;
+	while (i > 0)
+	{
+		if (val[i] != ' ')
+			return (1);
+		i -= 2;
+	}
+	return (0);
+}
+
+char	*ft_recup_args(char *args)
+{
+	int		i;
+	int		j;
+	char	*tab;
 
 	tab = (char*)malloc(17);
 	i = 0;
 	j = 0;
-	if (ft_strlen(args) > 31)
-		return (0);
-
-	while(args[i])
+	while (args[i])
 	{
-		if(args[i] != ' ')
+		if (args[i] != ' ')
 		{
 			tab[j] = args[i];
 			j++;
@@ -49,14 +92,17 @@ char	*ft_recup_args(char *args)
 	return (tab);
 }
 
-char	**ft_generate_tab()
+char	**ft_generate_tab(void)
 {
-	char **tab;
-	int i = -1;
+	char	**tab;
+	int		i;
 
+	i = -1;
 	tab = (char**)malloc(5);
 	while (++i < 4)
-		tab[i] = (char*)malloc(5);
-	tab[2][2] = 'o';
+		tab[i] = (char*)malloc(4);
+	i = -1;
+	while (++i < 4)
+		tab[i][4] = 0;
 	return (tab);
 }
