@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 14:57:44 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/16 16:55:37 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/16 19:32:37 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ char	*ft_recup_args(char *args)
 	j = 0;
 	while (args[i])
 	{
-	if (args[i] != ' ')
+		if (args[i] != ' ')
 		{
 			tab[j] = args[i];
 			j++;

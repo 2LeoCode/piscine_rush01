@@ -6,13 +6,13 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 14:26:57 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/16 17:08:13 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/16 20:13:55 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-int		ft_switch1(char **tab, char *val, int n)
+/*int		ft_switch1(char **tab, char *val, int n)
 {
 	switch(val[n + 4])
 	{
@@ -61,9 +61,9 @@ int		ft_switch3(char **tab, char *val, int n)
 		default:
 			return (0);
 	}
-}
+}*/
 
-int		ft_checkTableau(char **tab)
+int		ft_checktableau(char **tab)
 {
 	int i;
 	int j;
@@ -74,7 +74,8 @@ int		ft_checkTableau(char **tab)
 		j = 0;
 		while (j < 4)
 		{
-			if(tab[i][j] != '1' && tab[i][j] != '2' && tab[i][j] != '3' && tab[i][j] != '4')
+			if (tab[i][j] != '1' && tab[i][j] != '2'
+				&& tab[i][j] != '3' && tab[i][j] != '4')
 				return (0);
 			j++;
 		}
@@ -83,21 +84,25 @@ int		ft_checkTableau(char **tab)
 	return (1);
 }
 
-void	ft_generate_poss(void)
+/*void	ft_generate_poss(stock list)
 {
-	char **_12;
-	char **_13;
-	char **_14;
-	char **_22;
-	char **_23;
 	int i;
 
 	i = -1;
-	_12 = malloc(sizeof(char*) * 2)
+	_12 = malloc(sizeof(char*) * 2);
 		while (++i < 2)
 			_12[i] = malloc(5);
 	i = -1;
-	_13 = malloc(sizeof(char*) * 3)
+	_13 = malloc(sizeof(char*) * 3);
 		while (++i < 3)
 			_13[i] = malloc(5);
-}
+	_14 = malloc(5);
+	i = -1;
+	_22 = malloc(sizeof(char*) * 6);
+		while (++i < 6)
+			_22[i] = malloc(5);
+	i = -1;
+	_23 = malloc(sizeof(char*) * 3);
+		while (++i < 3)
+			_23[i] = malloc(5);
+}*/

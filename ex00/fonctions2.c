@@ -6,13 +6,13 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/16 10:38:00 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/16 16:56:04 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/16 19:30:58 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
-#include <header.h>
+#include "header.h"
 
 void	ft_init_tab(char **tab, int x, int y)
 {
@@ -34,10 +34,11 @@ void	ft_init_tab(char **tab, int x, int y)
 
 char	*ft_getstr(char **str, int p0, int isrow)
 {
-	char *tab;
-	tab = (char*)malloc(5);
-	int i = 0;
+	char	*tab;
+	int		i;
 
+	i = 0;
+	tab = (char*)malloc(5);
 	while (i < 4)
 	{
 		if (isrow)
@@ -52,8 +53,9 @@ char	*ft_getstr(char **str, int p0, int isrow)
 
 void	ft_putstr(char **str, int p0, int isrow, char *str2)
 {
-	int i = 0;
+	int i;
 
+	i = 0;
 	while (i < 4)
 	{
 		if (isrow)
@@ -64,7 +66,7 @@ void	ft_putstr(char **str, int p0, int isrow, char *str2)
 	}
 }
 
-int		ft_switch(char **tab, char *val, int n)
+/*int		ft_switch(char **tab, char *val, int n)
 {
 	switch (val[n])
 	{
@@ -84,7 +86,6 @@ int		ft_switch(char **tab, char *val, int n)
 				return (0);
 	}
 }
-
 int		ft_calc_pos(char **tab, int k, char *val)
 {
 	int i;
@@ -98,4 +99,4 @@ int		ft_calc_pos(char **tab, int k, char *val)
 		k += 1;
 		ft_calc_pos(tab, k, val);
 	}
-}
+}*/
