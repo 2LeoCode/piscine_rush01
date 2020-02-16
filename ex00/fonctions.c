@@ -6,7 +6,7 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 14:57:44 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/15 20:56:34 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/16 12:19:16 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*ft_recup_args(char *args)
 	j = 0;
 	while (args[i])
 	{
-		if (args[i] != ' ')
+	if (args[i] != ' ')
 		{
 			tab[j] = args[i];
 			j++;
@@ -92,17 +92,17 @@ char	*ft_recup_args(char *args)
 	return (tab);
 }
 
-char	**ft_generate_tab(void)
+char	**ft_generate_tab(int x, int y)
 {
 	char	**tab;
 	int		i;
 
 	i = -1;
-	tab = (char**)malloc(5);
-	while (++i < 4)
-		tab[i] = (char*)malloc(4);
+	tab = (char**)malloc(sizeof(char*) * y);
+	while (++i < y)
+		tab[i] = (char*)malloc(sizeof(char) * (x + 1));
 	i = -1;
-	while (++i < 4)
-		tab[i][4] = 0;
+	while (++i < y)
+		tab[i][x] = 0;
 	return (tab);
 }
