@@ -6,13 +6,14 @@
 /*   By: lsuardi <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/15 14:57:44 by lsuardi           #+#    #+#             */
-/*   Updated: 2020/02/16 12:19:16 by lsuardi          ###   ########.fr       */
+/*   Updated: 2020/02/16 16:55:37 by lsuardi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdio.h>
+#include "header.h"
 
 int		ft_strlen(char *str)
 {
@@ -100,7 +101,7 @@ char	**ft_generate_tab(int x, int y)
 	i = -1;
 	tab = (char**)malloc(sizeof(char*) * y);
 	while (++i < y)
-		tab[i] = (char*)malloc(sizeof(char) * (x + 1));
+		tab[i] = (char*)malloc(x + 1);
 	i = -1;
 	while (++i < y)
 		tab[i][x] = 0;
